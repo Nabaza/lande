@@ -3,8 +3,8 @@
 $method = $_SERVER['REQUEST_METHOD'];
 $array = [];
 parse_str($_SERVER['QUERY_STRING'], $array);
-// skaber forbindelse til databasen (porten er i mit tilfælde lavet om til 3305 da jeg bruger port 3306 til en anden)
-$link = mysqli_connect('localhost', 'root', '123456', 'world', 3305);
+// skaber forbindelse til databasen
+$link = mysqli_connect('localhost', 'root', 'root', 'world', 3306);
 mysqli_set_charset($link,'utf8');
 // If sætningen er til at løbe arrayet igennem og se om 'name' er der
 if($method == 'GET' && array_key_exists('name', $array)){
